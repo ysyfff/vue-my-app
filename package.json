@@ -1,0 +1,49 @@
+{
+  "name": "vue-my-app",
+  "description": "前端工程 - vue-my-app",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "packing serve",
+    "start:dist": "packing build && packing serve-dist",
+    "build": "packing build -o",
+    "build:dev": "NODE_ENV=development packing build",
+    "build:beta": "NODE_ENV=beta packing build",
+    "build:prod": "NODE_ENV=production packing build",
+    "serve": "npm start",
+    "serve:dist": "npm run start:dist",
+    "stylelint": "stylelint --fix \"src/**/*.(css|less|sass|scss)\"",
+    "eslint": "eslint --fix src",
+    "lint": "npm run stylelint && npm run eslint"
+  },
+  "pre-commit": [
+    "lint"
+  ],
+  "f2b": {
+    "path": "templates",
+    "project": "vue-my-app",
+    "type": "zip",
+    "version": "xxx"
+  },
+  "dependencies": {
+    "babel-preset-stage-0": "^6.24.1",
+    "less": "^2.7.2",
+    "less-loader": "^4.0.3",
+    "packing": "^3.2.4"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "express": "^4.16.3",
+    "open-browser-webpack-plugin": "^0.0.5",
+    "packing-ajax": "^0.0.1",
+    "packing-template-pug": "^2.0.5",
+    "packing-urlrewrite": "^0.1.8",
+    "pre-commit": "^1.2.2",
+    "standard-version": "^4.3.0",
+    "webpack-dev-middleware": "^3.1.2",
+    "webpack-hot-middleware": "^2.22.0"
+  },
+  "engines": {
+    "node": ">=6.11.5",
+    "npm": ">=3.0"
+  }
+}
